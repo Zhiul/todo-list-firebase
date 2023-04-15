@@ -1,0 +1,85 @@
+.login-wrapper {
+  max-width: 478px;
+  margin: 0 auto;
+  padding: 0px 42px;
+
+  h2 {
+    font-size: 32px;
+    color: #1f1f1f;
+    font-weight: 700;
+    margin-bottom: 48px;
+  }
+
+  @media screen and (min-width: 920px) {
+    max-width: 920px;
+  }
+}
+
+.login-header {
+  padding: 24px 0px;
+  margin-bottom: 60px;
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+
+  > div,
+  > img {
+    flex: 1;
+  }
+
+  @media screen and (min-width: 920px) {
+    flex-direction: row;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  img {
+    width: 48px;
+    height: 48px;
+  }
+
+  h1 {
+    font-size: 30px;
+    color: #e44232;
+    font-weight: 600;
+  }
+}
+
+.login-cta {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding-top: 11px;
+  padding-bottom: 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 150ms ease-in-out;
+  margin-bottom: 16px;
+
+  .login-cta-text {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    background-color: #eeeeee;
+  }
+}
+
+.login-section-image {
+  width: 500px;
+}

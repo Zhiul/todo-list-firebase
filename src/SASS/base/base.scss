@@ -1,0 +1,167 @@
+:root {
+  --mainColor: #db4c3f;
+  --todayGreen: #046a1f;
+  --lightgray: #c8c8c8;
+  --veryLightGray: #fafafa;
+}
+
+#root {
+  height: 100vh;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow: hidden;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco",
+    "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+input {
+  line-height: normal;
+}
+
+.remirror-editor-wrapper > div {
+  word-break: break-word;
+  outline: none !important;
+  overflow-y: hidden !important;
+}
+
+.remirror-is-empty:first-of-type::before {
+  font-style: unset !important;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  &[data-active="false"] {
+    pointer-events: none;
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 4;
+  display: block;
+}
+
+.dropdown {
+  position: fixed;
+  top: 0px;
+  z-index: 11;
+  transform: translate(var(--x), var(--y));
+  overflow: auto;
+
+  &[data-visible="true"] {
+    transition: transform 100ms ease-in-out;
+  }
+}
+
+.dropdown-overlay {
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.cta-cancel,
+.cta {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 13px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-cancel {
+  background-color: #f5f5f5;
+  color: #202020;
+  transition: 200ms ease-in-out background-color;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+}
+
+.cta {
+  background-color: #db4c3f;
+  color: white;
+  transition: 200ms ease-in-out background-color;
+
+  &:hover {
+    background-color: #b03d32;
+  }
+
+  &[aria-disabled="true"] {
+    opacity: 0.7;
+  }
+}
+
+.cta-cancel-sm {
+  font-size: 14px;
+  color: #555555;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

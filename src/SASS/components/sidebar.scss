@@ -1,0 +1,256 @@
+.sidebar {
+  width: 320px;
+  height: calc(100vh - 52px);
+  padding: 30px 10px;
+  background-color: var(--veryLightGray);
+  overflow-y: scroll;
+  position: fixed;
+  top: 52px;
+  z-index: 5;
+  transform: translate(-320px);
+  transition: transform 200ms ease-in-out;
+
+  &[data-active="true"] {
+    transform: translate(0px);
+  }
+
+  @media only screen and (max-width: 768px) {
+    &[data-active="true"] ~ .overlay {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+.sidebar-project {
+  width: 100%;
+  transition: background-color 200ms ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 20px 6px 10px;
+  border-radius: 7px;
+  position: relative;
+  cursor: pointer;
+
+  &:hover,
+  &[aria-current="page"],
+  &[data-is-modal-project="true"] {
+    background-color: #eeeeee;
+  }
+
+  &[data-type="normal"]:hover,
+  &[data-is-modal-project="true"] {
+    .sidebar-project-options {
+      opacity: 1;
+    }
+
+    .project-tasks-number {
+      opacity: 0;
+    }
+  }
+
+  .project-icon-circle {
+    margin: 7px 0px;
+  }
+
+  h3 {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 0.04em;
+  }
+}
+
+.sidebar-project-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0px;
+}
+
+.sidebar-project-title-container {
+  flex: 1;
+  min-width: 0px;
+
+  .project-icon-circle {
+    margin: 7px 0px;
+  }
+}
+
+.sidebar-project-options {
+  display: inline-flex;
+  position: absolute;
+  right: 11px;
+  opacity: 0;
+  cursor: pointer;
+
+  &:hover,
+  &[data-active="true"] {
+    svg {
+      color: #636363;
+    }
+  }
+
+  &[data-active="true"] {
+    opacity: 1;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: #808080;
+  }
+}
+
+.sidebar-project-right-section {
+  display: flex;
+  height: 1.1494rem;
+  min-width: 20px;
+  justify-content: flex-end;
+}
+
+.project-tasks-number {
+  color: #aaa;
+  margin-left: 4px;
+}
+
+.project-icon {
+  display: inline-flex;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.project-icon-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.project-icon-circle {
+  color: rgb(128, 128, 128);
+}
+
+.sidebar-projects-toggle {
+  position: sticky;
+  top: -30px;
+  background: var(--veryLightGray);
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  padding: 6px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0px;
+  border-radius: 7px;
+
+  transition: background-color 200ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eeeeee;
+  }
+
+  h2 {
+    color: rgb(97, 96, 96);
+    font-size: 1rem;
+  }
+}
+
+.sidebar-project-toggle-buttons {
+  display: flex;
+}
+
+.sidebar-project-toggle-btn {
+  width: 24px;
+  height: 24px;
+  color: gray;
+  padding: 0px;
+  cursor: pointer;
+
+  &:hover {
+    color: #4e4e4e;
+  }
+}
+
+.sidebar-project-toggle-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-projects-expand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(180deg);
+  transition: transform 200ms ease-in-out;
+}
+
+.sidebar-projects-expand[aria-expanded="true"] {
+  transform: rotate(90deg);
+}
+
+.sidebar-projects-expand svg {
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes sidebarProjectsAppearing {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes sidebarProjectsDisappearing {
+  from {
+    opacity: 1;
+    transform: scaleY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.sidebar-projects {
+  position: relative;
+  overflow: hidden;
+  max-height: 10000px;
+
+  &::after {
+    content: "";
+    opacity: 0;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--veryLightGray);
+    transform-origin: bottom;
+    animation: sidebarProjectsAppearing 500ms ease-in-out;
+    pointer-events: none;
+  }
+}
+
+.sidebar-projects[data-enabled="false"] {
+  max-height: 0px;
+  transition: max-height 0ms 500ms ease-in-out, visibility 0ms 500ms ease-in-out;
+  visibility: hidden;
+
+  &:after {
+    animation: sidebarProjectsDisappearing 500ms ease-in-out;
+  }
+}

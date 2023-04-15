@@ -1,0 +1,60 @@
+.set-project-modal {
+  width: clamp(0px, calc(100vw - 64px), 450px);
+  font-weight: 500;
+  padding: 0px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 0px #00000057;
+  transition: opacity 200ms ease-in-out;
+
+  &[data-visible="false"] {
+    opacity: 0;
+  }
+
+  &[data-animation="opening"] {
+    animation: 200ms ease-out deleteModalAppearing;
+  }
+
+  &[data-animation="closing"] {
+    animation: 200ms ease-out deleteModalDisappearing;
+  }
+}
+
+.set-project-modal-title {
+  font-size: 1.33rem;
+  font-weight: 500;
+  padding: 13px 16px 12px 16px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.set-project-modal-input-wrapper {
+  padding: 17px 16px 32px 16px;
+}
+
+#project-input-label {
+  display: block;
+  margin-bottom: 7px;
+}
+
+#project-input {
+  display: block;
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+
+  transition: 200ms ease-in-out border-color;
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid #808080;
+  }
+}
+
+.set-project-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 16px;
+  border-top: 1px solid #f5f5f5;
+}

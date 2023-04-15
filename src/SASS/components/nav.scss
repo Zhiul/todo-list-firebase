@@ -1,0 +1,136 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--mainColor);
+  padding: 10px;
+
+  section {
+    display: flex;
+    gap: 6px;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+button.user-profile,
+.user-profile {
+  background: #fb7f74;
+  padding: 0px;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 2px white;
+  border-radius: 50%;
+
+  &.user-profile-big {
+    min-width: 45px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.nav-button {
+  border-radius: 6px;
+  transition: 200ms ease-in-out;
+
+  &:hover {
+    background-color: #e27065;
+  }
+}
+
+.nav-add-task {
+  color: white;
+}
+
+.user-dropdown {
+  top: 47px;
+  right: 8px;
+  width: 272px;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 6px 0px #8f8f8f7d;
+}
+
+.user-dropdown-separator {
+  margin: 0px 4px;
+  height: 1px;
+  background: #dddddd;
+}
+
+.user-info {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 6px;
+  padding: 8px 16px;
+  margin: 6px;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+    background: #f3f3f3;
+  }
+}
+
+.user-info-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-info-name,
+.user-name-email {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.user-info-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.user-info-email {
+  font-size: 0.82rem;
+  color: gray;
+}
+
+.user-dropdown-log-out {
+  display: flex;
+  gap: 14px;
+  width: calc(100% - 12px);
+  justify-content: flex-start;
+  align-items: center;
+  padding: 4px 8px;
+  margin: 4px 6px;
+  border-radius: 4px;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background: #f3f3f3;
+  }
+}
+
+.user-dropdown-log-out-text {
+  color: #808080;
+}
+
+.user-dropdown-log-out-icon {
+  display: inline-flex;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: #808080;
+  }
+}
