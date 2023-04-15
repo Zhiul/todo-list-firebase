@@ -49,7 +49,13 @@ export function Login({
             </button>
           </div>
 
-          <img src={TodolistHeroImage} alt="" className="login-section-image" />
+          <div className="login-section-image-wrapper">
+            <img
+              src={TodolistHeroImage}
+              alt=""
+              className="login-section-image"
+            />
+          </div>
         </main>
       </div>
     </>

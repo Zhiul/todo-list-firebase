@@ -80,6 +80,12 @@
   }
 }
 
+.login-section-image-wrapper {
+  max-width: 500px;
+  aspect-ratio: 640 / 427;
+}
+
 .login-section-image {
-  width: 500px;
+  width: 100%;
+  height: 100%;
 }

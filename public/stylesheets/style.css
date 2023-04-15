@@ -503,6 +503,11 @@ input {
   pointer-events: none;
 }
 
+.loading-screen-logo {
+  width: 128px;
+  height: 128px;
+}
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -2217,8 +2222,14 @@ abbr[title] {
   background-color: #eeeeee;
 }
 
+.login-section-image-wrapper {
+  max-width: 500px;
+  aspect-ratio: 640/427;
+}
+
 .login-section-image {
-  width: 500px;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
